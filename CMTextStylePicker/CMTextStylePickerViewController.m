@@ -189,26 +189,19 @@
 	
 	self.tableLayout = [NSArray arrayWithObjects:
 						[NSArray arrayWithObjects:
-						 self.defaultSettingsCell,
-						 nil],
-						[NSArray arrayWithObjects:
 						 self.sizeCell,
 						 self.fontCell,
 						 self.colourCell,
 						 nil],
-						[NSArray arrayWithObjects:
-						 self.applyAsDefaultCell,
-						 nil],
 						nil];
-	
-	if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
-		// iPhone UI
-		self.navigationItem.rightBarButtonItem = self.doneButtonItem;
-	}
-	else {
-		// iPad UI
-		self.contentSizeForViewInPopover = CGSizeMake(320.0, 330.0);
-	}
+
+    self.tableView.scrollEnabled = NO;
+    self.contentSizeForViewInPopover = CGSizeMake(320.0, 240.0);
+    
+    self.navigationItem.backBarButtonItem =
+    [[UIBarButtonItem alloc] initWithTitle:@"Back"
+                                     style:UIBarButtonItemStyleBordered
+                                    target:nil action:nil];
 }
 
 /*
